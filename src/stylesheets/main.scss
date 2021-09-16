@@ -1,4 +1,4 @@
-@import './fotter.scss';
+@import './footer';
 
 @mixin set-margin ($direction, $value){
     margin-#{$direction}: $value;
