@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // const { loader } = require('mini-css-extract-plugin');
 // const { TRUE } = require('node-sass');
-const VueLoaderPlugin = require('vue-loader/lib/plugin'); 
 
 module.exports = {
   mode: 'development',
@@ -18,11 +17,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'vue-loader',
+            loader: 'ts-loader',
           },
         ],
       },
@@ -101,7 +100,6 @@ module.exports = {
     ],
   },
   plugins: [
-      new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
           filename: './stylesheets/main.css',
       }),
