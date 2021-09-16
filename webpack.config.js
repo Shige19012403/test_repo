@@ -7,11 +7,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   entry: './src/javascripts/main.js',
   output: {
       path: path.resolve(__dirname, './dist'),
       filename: "javascripts/main.js",
+      publicPath: '/',
   },
   // moduleを追加
   module: {
